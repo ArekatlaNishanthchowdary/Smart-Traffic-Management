@@ -1,0 +1,11 @@
+digraph "YOLOv8s Architecture" {
+	Input [label="Input Image (640x640)" fillcolor=lightblue shape=box style=filled]
+	Backbone [label="Backbone (CSPDarknet)" fillcolor=lightgreen shape=box style=filled]
+	Neck [label="Neck (PAN-FPN)" fillcolor=lightgreen shape=box style=filled]
+	Head [label="YOLO Head (Detection & Classification)" fillcolor=lightcoral shape=box style=filled]
+	Output [label="Output (Bounding Boxes, Class Scores)" fillcolor=yellow shape=box style=filled]
+	Input -> Backbone [label="Feature Extraction"]
+	Backbone -> Neck [label="Feature Fusion"]
+	Neck -> Head [label="Object Detection"]
+	Head -> Output [label="Final Predictions"]
+}
